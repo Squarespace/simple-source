@@ -1,0 +1,35 @@
+[
+{ "name": "Bilbo", "race": "Hobbit"},
+{ "name": "Frodo", "race": "Hobbit"},
+{ "name": "Sméagol", "race": "Hobbit"},
+{ "name": "Déagol", "race": "Hobbit"},
+{ "name": "Samwise", "race": "Hobbit"},
+{ "name": "Meriadoc", "race": "Hobbit"},
+{ "name": "Peregrin", "race": "Hobbit"},
+
+{ "name": "Gandalf", "race": "Human" },
+{ "name": "Aragorn", "race": "Human" },
+{ "name": "Boromir", "race": "Human" },
+{ "name": "Théoden", "race": "Human" },
+{ "name": "Grìma Wormtongue", "race": "Human" },
+{ "name": "Faramir", "race": "Human" },
+{ "name": "Denethor", "race": "Human" },
+
+{ "name": "Arwen Evenstar", "race": "Elf" },
+{ "name": "Galadriel", "race": "Elf" },
+{ "name": "Elrond", "race": "Elf" },
+{ "name": "Glorfindel", "race": "Elf" },
+
+{ "name": "Fíli", "race": "Dwarf" },
+{ "name": "Kíli", "race": "Dwarf" },
+{ "name": "Óin", "race": "Dwarf" },
+{ "name": "Glóin", "race": "Dwarf" },
+{ "name": "Balin", "race": "Dwarf" },
+{ "name": "Dwalin", "race": "Dwarf" },
+{ "name": "Ori", "race": "Dwarf" },
+{ "name": "Dori", "race": "Dwarf" },
+{ "name": "Nori", "race": "Dwarf" },
+{ "name": "Bifur", "race": "Dwarf" },
+{ "name": "Bofur", "race": "Dwarf" },
+{ "name": "Bombur", "race": "Dwarf" }
+]

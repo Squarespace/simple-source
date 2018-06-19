@@ -1,0 +1,38 @@
+# Mac OS X
+*.DS_Store
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+*.xccheckout
+
+# Playgrounds
+timeline.xctimeline
+
+# Generated files
+build/
+#*.[oa]
+*.pyc
+.cache
+
+# Backup files
+*~.nib
+*.orig
+~*
+
+# Localizer script
+*.strings.old
+*.strings.new
+
+# Temporary files
+*.sqlite-journal
+
+!Carthage/Build/
+
+Pods/
+Podfile.lock

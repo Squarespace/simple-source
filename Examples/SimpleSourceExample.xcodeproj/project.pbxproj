@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1125C4B111C313BADE9DEE27 /* Pods_SimpleSourceExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03B72459B7D8A89ED6D1A29 /* Pods_SimpleSourceExample.framework */; };
+		C424C2691E3B4B2900CEE8C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C2681E3B4B2900CEE8C0 /* AppDelegate.swift */; };
+		C424C26B1E3B4B2900CEE8C0 /* ColorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C26A1E3B4B2900CEE8C0 /* ColorTableViewController.swift */; };
+		C424C26E1E3B4B2900CEE8C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C424C26C1E3B4B2900CEE8C0 /* Main.storyboard */; };
+		C424C2701E3B4B2900CEE8C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C424C26F1E3B4B2900CEE8C0 /* Assets.xcassets */; };
+		C424C2731E3B4B2900CEE8C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C424C2711E3B4B2900CEE8C0 /* LaunchScreen.storyboard */; };
+		C424C27D1E3B53F000CEE8C0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C27C1E3B53F000CEE8C0 /* Colors.swift */; };
+		C424C2801E3B5D3200CEE8C0 /* ColorLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C27F1E3B5D3200CEE8C0 /* ColorLoader.swift */; };
+		C424C2821E3B5D7700CEE8C0 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = C424C2811E3B5D7700CEE8C0 /* colors.json */; };
+		C424C2841E3B62CC00CEE8C0 /* ColorTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C2831E3B62CC00CEE8C0 /* ColorTableCell.swift */; };
+		C424C2861E3B6C6F00CEE8C0 /* ColorGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C2851E3B6C6F00CEE8C0 /* ColorGridViewController.swift */; };
+		C424C2891E3B6CB500CEE8C0 /* ColorGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C2881E3B6CB500CEE8C0 /* ColorGridCell.swift */; };
+		C424C28B1E3B947600CEE8C0 /* EditableColorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C28A1E3B947600CEE8C0 /* EditableColorTableViewController.swift */; };
+		C424C28E1E3CA76700CEE8C0 /* HeaderColorGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C28D1E3CA76700CEE8C0 /* HeaderColorGridViewController.swift */; };
+		C424C2931E3CAD6500CEE8C0 /* ColorGridHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C2921E3CAD6500CEE8C0 /* ColorGridHeader.swift */; };
+		C424C2951E3CCA6C00CEE8C0 /* TextHeaderFooterColorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C2941E3CCA6C00CEE8C0 /* TextHeaderFooterColorTableViewController.swift */; };
+		C424C2991E3CF57B00CEE8C0 /* CustomHeaderFooterColorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C2981E3CF57B00CEE8C0 /* CustomHeaderFooterColorTableViewController.swift */; };
+		C424C29B1E3CFA4F00CEE8C0 /* ColorTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C29A1E3CFA4F00CEE8C0 /* ColorTableHeader.swift */; };
+		C424C29F1E3D030600CEE8C0 /* CharacterModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C424C29D1E3D030600CEE8C0 /* CharacterModel.xcdatamodeld */; };
+		C424C2A51E3D05AC00CEE8C0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C2A41E3D05AC00CEE8C0 /* CoreDataStack.swift */; };
+		C424C2A71E3D08FA00CEE8C0 /* CharacterLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C2A61E3D08FA00CEE8C0 /* CharacterLoader.swift */; };
+		C424C2AA1E3D145A00CEE8C0 /* CharacterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C2A91E3D145A00CEE8C0 /* CharacterTableViewController.swift */; };
+		C424C2AC1E3D1B1600CEE8C0 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = C424C2AB1E3D1B1600CEE8C0 /* characters.json */; };
+		C4847CC5200388DD00841DBA /* ItemListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4847CC4200388DD00841DBA /* ItemListTableViewController.swift */; };
+		C4E8EA7A1EABC18300D5EE1D /* ReorderingColorGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8EA791EABC18300D5EE1D /* ReorderingColorGridViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		65333953768EE8F03228185B /* Pods-SimpleSourceExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleSourceExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample.debug.xcconfig"; sourceTree = "<group>"; };
+		8C2328A1D61B2AA900671F49 /* Pods-SimpleSourceExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleSourceExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample.release.xcconfig"; sourceTree = "<group>"; };
+		C424C2651E3B4B2900CEE8C0 /* SimpleSourceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSourceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C424C2681E3B4B2900CEE8C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C424C26A1E3B4B2900CEE8C0 /* ColorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewController.swift; sourceTree = "<group>"; };
+		C424C26D1E3B4B2900CEE8C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C424C26F1E3B4B2900CEE8C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C424C2721E3B4B2900CEE8C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C424C2741E3B4B2900CEE8C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C424C27C1E3B53F000CEE8C0 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C424C27F1E3B5D3200CEE8C0 /* ColorLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorLoader.swift; sourceTree = "<group>"; };
+		C424C2811E3B5D7700CEE8C0 /* colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
+		C424C2831E3B62CC00CEE8C0 /* ColorTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTableCell.swift; sourceTree = "<group>"; };
+		C424C2851E3B6C6F00CEE8C0 /* ColorGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGridViewController.swift; sourceTree = "<group>"; };
+		C424C2881E3B6CB500CEE8C0 /* ColorGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGridCell.swift; sourceTree = "<group>"; };
+		C424C28A1E3B947600CEE8C0 /* EditableColorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableColorTableViewController.swift; sourceTree = "<group>"; };
+		C424C28D1E3CA76700CEE8C0 /* HeaderColorGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderColorGridViewController.swift; sourceTree = "<group>"; };
+		C424C2921E3CAD6500CEE8C0 /* ColorGridHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGridHeader.swift; sourceTree = "<group>"; };
+		C424C2941E3CCA6C00CEE8C0 /* TextHeaderFooterColorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextHeaderFooterColorTableViewController.swift; sourceTree = "<group>"; };
+		C424C2981E3CF57B00CEE8C0 /* CustomHeaderFooterColorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderFooterColorTableViewController.swift; sourceTree = "<group>"; };
+		C424C29A1E3CFA4F00CEE8C0 /* ColorTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTableHeader.swift; sourceTree = "<group>"; };
+		C424C29E1E3D030600CEE8C0 /* CharacterModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CharacterModel.xcdatamodel; sourceTree = "<group>"; };
+		C424C2A41E3D05AC00CEE8C0 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		C424C2A61E3D08FA00CEE8C0 /* CharacterLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterLoader.swift; sourceTree = "<group>"; };
+		C424C2A91E3D145A00CEE8C0 /* CharacterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterTableViewController.swift; sourceTree = "<group>"; };
+		C424C2AB1E3D1B1600CEE8C0 /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
+		C4847CC4200388DD00841DBA /* ItemListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListTableViewController.swift; sourceTree = "<group>"; };
+		C4E8EA791EABC18300D5EE1D /* ReorderingColorGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderingColorGridViewController.swift; sourceTree = "<group>"; };
+		E03B72459B7D8A89ED6D1A29 /* Pods_SimpleSourceExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleSourceExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C424C2621E3B4B2900CEE8C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1125C4B111C313BADE9DEE27 /* Pods_SimpleSourceExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D1976861E89CF5DB8542DB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65333953768EE8F03228185B /* Pods-SimpleSourceExample.debug.xcconfig */,
+				8C2328A1D61B2AA900671F49 /* Pods-SimpleSourceExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6C8F20F1EEC12F51A1D3E66B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E03B72459B7D8A89ED6D1A29 /* Pods_SimpleSourceExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C424C25C1E3B4B2900CEE8C0 = {
+			isa = PBXGroup;
+			children = (
+				C424C2671E3B4B2900CEE8C0 /* SimpleSourceExample */,
+				C424C2661E3B4B2900CEE8C0 /* Products */,
+				5D1976861E89CF5DB8542DB1 /* Pods */,
+				6C8F20F1EEC12F51A1D3E66B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C424C2661E3B4B2900CEE8C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C424C2651E3B4B2900CEE8C0 /* SimpleSourceExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C424C2671E3B4B2900CEE8C0 /* SimpleSourceExample */ = {
+			isa = PBXGroup;
+			children = (
+				C424C2681E3B4B2900CEE8C0 /* AppDelegate.swift */,
+				C424C27E1E3B572E00CEE8C0 /* Data */,
+				C424C2901E3CAB2600CEE8C0 /* Screens */,
+				C424C27A1E3B523400CEE8C0 /* Resources */,
+			);
+			path = SimpleSourceExample;
+			sourceTree = "<group>";
+		};
+		C424C27A1E3B523400CEE8C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C424C2811E3B5D7700CEE8C0 /* colors.json */,
+				C424C2AB1E3D1B1600CEE8C0 /* characters.json */,
+				C424C26C1E3B4B2900CEE8C0 /* Main.storyboard */,
+				C424C26F1E3B4B2900CEE8C0 /* Assets.xcassets */,
+				C424C2711E3B4B2900CEE8C0 /* LaunchScreen.storyboard */,
+				C424C2741E3B4B2900CEE8C0 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C424C27B1E3B529000CEE8C0 /* Color Table */ = {
+			isa = PBXGroup;
+			children = (
+				C424C26A1E3B4B2900CEE8C0 /* ColorTableViewController.swift */,
+			);
+			name = "Color Table";
+			sourceTree = "<group>";
+		};
+		C424C27E1E3B572E00CEE8C0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C424C2911E3CAB3B00CEE8C0 /* Basic Data */,
+				C424C29C1E3D02C000CEE8C0 /* Core Data */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		C424C2871E3B6C7600CEE8C0 /* Color Grid */ = {
+			isa = PBXGroup;
+			children = (
+				C424C2851E3B6C6F00CEE8C0 /* ColorGridViewController.swift */,
+			);
+			name = "Color Grid";
+			sourceTree = "<group>";
+		};
+		C424C28C1E3B94A200CEE8C0 /* Color Table – Editable */ = {
+			isa = PBXGroup;
+			children = (
+				C424C28A1E3B947600CEE8C0 /* EditableColorTableViewController.swift */,
+			);
+			name = "Color Table – Editable";
+			sourceTree = "<group>";
+		};
+		C424C28F1E3CAAEE00CEE8C0 /* Color Grid – Headers */ = {
+			isa = PBXGroup;
+			children = (
+				C424C2921E3CAD6500CEE8C0 /* ColorGridHeader.swift */,
+				C424C28D1E3CA76700CEE8C0 /* HeaderColorGridViewController.swift */,
+			);
+			name = "Color Grid – Headers";
+			sourceTree = "<group>";
+		};
+		C424C2901E3CAB2600CEE8C0 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C424C2831E3B62CC00CEE8C0 /* ColorTableCell.swift */,
+				C424C2881E3B6CB500CEE8C0 /* ColorGridCell.swift */,
+				C424C27B1E3B529000CEE8C0 /* Color Table */,
+				C424C28C1E3B94A200CEE8C0 /* Color Table – Editable */,
+				C424C2961E3CCA7800CEE8C0 /* Color Table – Text Header/Footer */,
+				C424C2971E3CF4FF00CEE8C0 /* Color Table – Custom Header/Footer */,
+				C424C2871E3B6C7600CEE8C0 /* Color Grid */,
+				C424C28F1E3CAAEE00CEE8C0 /* Color Grid – Headers */,
+				C4E8EA781EABC15B00D5EE1D /* Color Grid – Reordering */,
+				C4847CC32003887000841DBA /* Item List */,
+				C424C2A81E3D143C00CEE8C0 /* Character Table */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		C424C2911E3CAB3B00CEE8C0 /* Basic Data */ = {
+			isa = PBXGroup;
+			children = (
+				C424C27C1E3B53F000CEE8C0 /* Colors.swift */,
+				C424C27F1E3B5D3200CEE8C0 /* ColorLoader.swift */,
+			);
+			name = "Basic Data";
+			sourceTree = "<group>";
+		};
+		C424C2961E3CCA7800CEE8C0 /* Color Table – Text Header/Footer */ = {
+			isa = PBXGroup;
+			children = (
+				C424C2941E3CCA6C00CEE8C0 /* TextHeaderFooterColorTableViewController.swift */,
+			);
+			name = "Color Table – Text Header/Footer";
+			sourceTree = "<group>";
+		};
+		C424C2971E3CF4FF00CEE8C0 /* Color Table – Custom Header/Footer */ = {
+			isa = PBXGroup;
+			children = (
+				C424C29A1E3CFA4F00CEE8C0 /* ColorTableHeader.swift */,
+				C424C2981E3CF57B00CEE8C0 /* CustomHeaderFooterColorTableViewController.swift */,
+			);
+			name = "Color Table – Custom Header/Footer";
+			sourceTree = "<group>";
+		};
+		C424C29C1E3D02C000CEE8C0 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				C424C2A41E3D05AC00CEE8C0 /* CoreDataStack.swift */,
+				C424C2A61E3D08FA00CEE8C0 /* CharacterLoader.swift */,
+				C424C29D1E3D030600CEE8C0 /* CharacterModel.xcdatamodeld */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		C424C2A81E3D143C00CEE8C0 /* Character Table */ = {
+			isa = PBXGroup;
+			children = (
+				C424C2A91E3D145A00CEE8C0 /* CharacterTableViewController.swift */,
+			);
+			name = "Character Table";
+			sourceTree = "<group>";
+		};
+		C4847CC32003887000841DBA /* Item List */ = {
+			isa = PBXGroup;
+			children = (
+				C4847CC4200388DD00841DBA /* ItemListTableViewController.swift */,
+			);
+			name = "Item List";
+			sourceTree = "<group>";
+		};
+		C4E8EA781EABC15B00D5EE1D /* Color Grid – Reordering */ = {
+			isa = PBXGroup;
+			children = (
+				C4E8EA791EABC18300D5EE1D /* ReorderingColorGridViewController.swift */,
+			);
+			name = "Color Grid – Reordering";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C424C2641E3B4B2900CEE8C0 /* SimpleSourceExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C424C2771E3B4B2900CEE8C0 /* Build configuration list for PBXNativeTarget "SimpleSourceExample" */;
+			buildPhases = (
+				C9493BAEA1942A5FAEECDEE7 /* [CP] Check Pods Manifest.lock */,
+				C424C2611E3B4B2900CEE8C0 /* Sources */,
+				C424C2621E3B4B2900CEE8C0 /* Frameworks */,
+				C424C2631E3B4B2900CEE8C0 /* Resources */,
+				61726B5B8A96F790C3CA8367 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleSourceExample;
+			productName = SimpleSourceExample;
+			productReference = C424C2651E3B4B2900CEE8C0 /* SimpleSourceExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C424C25D1E3B4B2900CEE8C0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Squarespace Inc.";
+				TargetAttributes = {
+					C424C2641E3B4B2900CEE8C0 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C424C2601E3B4B2900CEE8C0 /* Build configuration list for PBXProject "SimpleSourceExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C424C25C1E3B4B2900CEE8C0;
+			productRefGroup = C424C2661E3B4B2900CEE8C0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C424C2641E3B4B2900CEE8C0 /* SimpleSourceExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C424C2631E3B4B2900CEE8C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C424C2731E3B4B2900CEE8C0 /* LaunchScreen.storyboard in Resources */,
+				C424C2821E3B5D7700CEE8C0 /* colors.json in Resources */,
+				C424C2701E3B4B2900CEE8C0 /* Assets.xcassets in Resources */,
+				C424C2AC1E3D1B1600CEE8C0 /* characters.json in Resources */,
+				C424C26E1E3B4B2900CEE8C0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		61726B5B8A96F790C3CA8367 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Dwifft/Dwifft.framework",
+				"${BUILT_PRODUCTS_DIR}/SimpleSource/SimpleSource.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dwifft.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleSource.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9493BAEA1942A5FAEECDEE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleSourceExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C424C2611E3B4B2900CEE8C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C424C2A51E3D05AC00CEE8C0 /* CoreDataStack.swift in Sources */,
+				C424C29B1E3CFA4F00CEE8C0 /* ColorTableHeader.swift in Sources */,
+				C424C2991E3CF57B00CEE8C0 /* CustomHeaderFooterColorTableViewController.swift in Sources */,
+				C424C2861E3B6C6F00CEE8C0 /* ColorGridViewController.swift in Sources */,
+				C424C2A71E3D08FA00CEE8C0 /* CharacterLoader.swift in Sources */,
+				C424C2951E3CCA6C00CEE8C0 /* TextHeaderFooterColorTableViewController.swift in Sources */,
+				C424C28B1E3B947600CEE8C0 /* EditableColorTableViewController.swift in Sources */,
+				C4E8EA7A1EABC18300D5EE1D /* ReorderingColorGridViewController.swift in Sources */,
+				C424C26B1E3B4B2900CEE8C0 /* ColorTableViewController.swift in Sources */,
+				C424C2AA1E3D145A00CEE8C0 /* CharacterTableViewController.swift in Sources */,
+				C424C28E1E3CA76700CEE8C0 /* HeaderColorGridViewController.swift in Sources */,
+				C4847CC5200388DD00841DBA /* ItemListTableViewController.swift in Sources */,
+				C424C29F1E3D030600CEE8C0 /* CharacterModel.xcdatamodeld in Sources */,
+				C424C2841E3B62CC00CEE8C0 /* ColorTableCell.swift in Sources */,
+				C424C2691E3B4B2900CEE8C0 /* AppDelegate.swift in Sources */,
+				C424C2931E3CAD6500CEE8C0 /* ColorGridHeader.swift in Sources */,
+				C424C2891E3B6CB500CEE8C0 /* ColorGridCell.swift in Sources */,
+				C424C2801E3B5D3200CEE8C0 /* ColorLoader.swift in Sources */,
+				C424C27D1E3B53F000CEE8C0 /* Colors.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C424C26C1E3B4B2900CEE8C0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C424C26D1E3B4B2900CEE8C0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C424C2711E3B4B2900CEE8C0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C424C2721E3B4B2900CEE8C0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C424C2751E3B4B2900CEE8C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C424C2761E3B4B2900CEE8C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C424C2781E3B4B2900CEE8C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65333953768EE8F03228185B /* Pods-SimpleSourceExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimpleSourceExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.squarespace.SimpleSourceExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		C424C2791E3B4B2900CEE8C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C2328A1D61B2AA900671F49 /* Pods-SimpleSourceExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimpleSourceExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.squarespace.SimpleSourceExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C424C2601E3B4B2900CEE8C0 /* Build configuration list for PBXProject "SimpleSourceExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C424C2751E3B4B2900CEE8C0 /* Debug */,
+				C424C2761E3B4B2900CEE8C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C424C2771E3B4B2900CEE8C0 /* Build configuration list for PBXNativeTarget "SimpleSourceExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C424C2781E3B4B2900CEE8C0 /* Debug */,
+				C424C2791E3B4B2900CEE8C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C424C29D1E3D030600CEE8C0 /* CharacterModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C424C29E1E3D030600CEE8C0 /* CharacterModel.xcdatamodel */,
+			);
+			currentVersion = C424C29E1E3D030600CEE8C0 /* CharacterModel.xcdatamodel */;
+			path = CharacterModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C424C25D1E3B4B2900CEE8C0 /* Project object */;
+}

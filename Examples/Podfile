@@ -1,0 +1,18 @@
+platform :ios, '9.0'
+
+target 'SimpleSourceExample' do
+    use_frameworks!
+
+    pod 'SimpleSource', :path => '..', :testspecs => ['Tests']
+    pod 'SwiftyJSON'
+end
+
+# This makes the SimpleSource symbols available to the playground.
+# It became necessary after the release of CocoaPods 1.5.0.
+# See also https://github.com/CocoaPods/CocoaPods/issues/7606
+post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+        config.build_settings.delete('CODE_SIGNING_ALLOWED')
+        config.build_settings.delete('CODE_SIGNING_REQUIRED')
+    end
+end
