@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/Squarespace/simple-source.svg?branch=master)](https://travis-ci.org/Squarespace/simple-source) 
+[![codecov.io](https://codecov.io/github/Squarespace/simple-source/coverage.svg?branch=master)](https://codecov.io/github/Squarespace/simple-source?branch=master)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/SimpleSource.svg)](https://cocoapods.org/pods/SimpleSource)
+
 Quick Start
 -----------
 
@@ -14,7 +19,7 @@ Then come back here to learn more.
 ```
 $ cd Examples/
 $ pod install
-$ open SimpleSourceExamples.xcworkspace
+$ open SimpleSourceExample.xcworkspace
 ```
 
 Contents
