@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.dependency           'Dwifft', '0.7'
 
   s.test_spec 'Tests' do |test_spec|
+    test_spec.resource = 'Tests/Model/*.xcdatamodeld'
     test_spec.source_files = 'Tests/**/*.swift'
     test_spec.dependency 'Nimble'
     test_spec.dependency 'Quick'
