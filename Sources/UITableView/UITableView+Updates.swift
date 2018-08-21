@@ -5,7 +5,7 @@ extension UITableView {
         return { [weak self] _ in self?.reloadData() }
     }
     
-    public func defaultViewUpdate(with animation: UITableViewRowAnimation = .fade) -> IndexedUpdateHandler.Observer {
+    public func defaultViewUpdate(with animation: UITableView.RowAnimation = .fade) -> IndexedUpdateHandler.Observer {
         return { [weak self] update in
             guard let _ = self?.window else {
                 self?.reloadData()

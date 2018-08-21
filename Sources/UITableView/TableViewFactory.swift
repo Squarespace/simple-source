@@ -3,7 +3,7 @@ import UIKit
 public enum TableViewRegistrationMethod {
     case classBased(AnyClass?)
     case nibBased(UINib?)
-    case style(UITableViewCellStyle)
+    case style(UITableViewCell.CellStyle)
     case dynamic
 }
 
