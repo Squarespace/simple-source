@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.authors              = { 'Morten Heiberg' => 'mheiberg@squarespace.com', 'Thor Frolich' => 'tfrolich@squarespace.com' }
   s.platform             = :ios, '9.0'
   s.swift_version        = '4.0'
-  s.source               = { :git => 'https://github.com/Squarespace/simple-source.git', :tag => '1.0.0' }
+  s.source               = { :git => 'https://github.com/Squarespace/simple-source.git', :tag => s.version }
   s.source_files         = 'Sources/**/*.{h,m,swift}'
   s.dependency           'Dwifft', '0.7'
 
