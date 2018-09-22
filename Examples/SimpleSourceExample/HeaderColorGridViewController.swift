@@ -60,7 +60,7 @@ final class HeaderColorGridViewController: UICollectionViewController {
         let configureHeader = ColorGridHeader.configureHeader(dataSource: dataSource)
         viewFactory.registerSupplementaryView(
             method: .dynamic,
-            kind: UICollectionElementKindSectionHeader,
+            kind: UICollectionView.elementKindSectionHeader,
             reuseIdentifier: ColorGridHeader.reuseIdentifier,
             in: collectionView,
             configuration: configureHeader)
