@@ -1,4 +1,4 @@
-osx_image: xcode9.4
+osx_image: xcode10
 language: swift
 script:
   - pod install --project-directory=Examples
