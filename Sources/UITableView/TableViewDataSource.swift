@@ -87,7 +87,7 @@ open class TableViewDataSource<DS, VF>: NSObject, UITableViewDataSource where DS
         return editingDelegate?.editing(tableView: tableView, canEditRowAt: indexPath) ?? false
     }
 
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         editingDelegate?.editing(tableView: tableView, commit: editingStyle, forRowAt: indexPath)
     }
 

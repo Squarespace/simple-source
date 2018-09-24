@@ -78,7 +78,7 @@ final class ItemListTableViewController: UITableViewController {
 
     // This method is part of UITableViewDelegate, so it will not be provided or proxied by the SimpleSource data source.
     // SimpleSource only implements methods from UITableViewDataSource.
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
 
@@ -98,7 +98,7 @@ final class ItemListTableViewController: UITableViewController {
 // MARK: Editing
 
 extension ItemListTableViewController: TableViewEditingDelegate {
-    func editing(tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func editing(tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         dataSource.sections[0].items.remove(at: indexPath.item)
     }
 }
