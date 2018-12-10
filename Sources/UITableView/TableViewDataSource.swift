@@ -21,7 +21,7 @@ open class TableViewDataSource<DS, VF>: NSObject, UITableViewDataSource where DS
         super.init()
 
         self.subscription = dataSource.updateHandler.subscribe { [weak self] update in
-            guard let `self` = self, !self.ignoreDataSourceUpdates else { return }
+            guard let `self` = self, !update.isEmpty, !self.ignoreDataSourceUpdates else { return }
             viewUpdate(update)
         }
     }

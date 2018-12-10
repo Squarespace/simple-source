@@ -10,6 +10,24 @@ public enum IndexedUpdate {
         deletedRows: [IndexPath]
     )
     case full
+
+    /// Whether the update is considered empty.
+    ///
+    /// - `true` for delta updates with no content
+    /// - `false` in all other cases
+    public var isEmpty: Bool {
+        switch self {
+        case let .delta(insertedSections, updatedSections, deletedSections, insertedRows, updatedRows, deletedRows):
+            return insertedSections.isEmpty &&
+                updatedSections.isEmpty &&
+                deletedSections.isEmpty &&
+                insertedRows.isEmpty &&
+                updatedRows.isEmpty &&
+                deletedRows.isEmpty
+        case .full:
+            return false
+        }
+    }
 }
 
 public class IndexedUpdateHandler {
