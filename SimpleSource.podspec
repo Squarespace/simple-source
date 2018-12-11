@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                 = 'SimpleSource'
-  s.version              = '2.0.0'
+  s.version              = '2.0.1'
   s.summary              = 'Composable, easy to use data sources for UITableView and UICollectionView.'
   s.homepage             = 'https://github.com/Squarespace/simple-source'
   s.license              = { :type => 'Apache', :file => 'LICENSE' }
