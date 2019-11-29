@@ -1,5 +1,4 @@
 import Foundation
-import Dwifft
 
 public class BasicDataSource<Section>: DataSourceType where Section: SectionType
 {
