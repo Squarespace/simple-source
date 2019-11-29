@@ -58,7 +58,9 @@ class UIKitViewUpdateTests: QuickSpec {
                     sections[2].items[0].value.toggle()
 
                     var didPerformDiffedUpdate = false
+                    var updateIsLikelyToCrashUITableView = true
                     vc.onViewUpdate = { update in
+                        updateIsLikelyToCrashUITableView = update.isLikelyToCrashUITableView
                         switch update {
                         case .delta:
                             didPerformDiffedUpdate = true
@@ -71,6 +73,7 @@ class UIKitViewUpdateTests: QuickSpec {
                         vc.dataSource.sections = sections
                     }
 
+                    expect(updateIsLikelyToCrashUITableView).toEventually(equal(false))
                     expect(didPerformDiffedUpdate).toEventually(equal(true))
                 }
 
@@ -83,10 +86,16 @@ class UIKitViewUpdateTests: QuickSpec {
                     // Change the value of the first item in the (previous section 2 but now) section 1
                     sections[1].items[0].value.toggle()
 
+                    var updateIsLikelyToCrashUITableView = false
+                    vc.onViewUpdate = { update in
+                        updateIsLikelyToCrashUITableView = update.isLikelyToCrashUITableView
+                    }
+
                     DispatchQueue.main.async {
                         vc.dataSource.sections = sections
                     }
 
+                    expect(updateIsLikelyToCrashUITableView).toEventually(equal(true))
                     expect(vc.viewNumberOfSections).toEventually(equal(sections.count))
                 }
             }
