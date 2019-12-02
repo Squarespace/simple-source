@@ -4,7 +4,7 @@ target 'SimpleSourceExample' do
     use_frameworks!
 
     pod 'SimpleSource', :path => '..', :testspecs => ['Tests']
-    pod 'SwiftyJSON'
+    pod 'SwiftyJSON', '~> 4.2'
 end
 
 # This makes the SimpleSource symbols available to the playground.
