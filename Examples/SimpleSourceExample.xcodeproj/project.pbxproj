@@ -336,7 +336,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Dwifft/Dwifft.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleSource/SimpleSource.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -349,7 +349,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C9493BAEA1942A5FAEECDEE7 /* [CP] Check Pods Manifest.lock */ = {
