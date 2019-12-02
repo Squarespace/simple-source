@@ -53,7 +53,7 @@ struct Diff {
         newData.enumerated().forEach { sectionIndex, newSection in
             if insertedSections.contains(sectionIndex) { return }
             guard
-                let oldSectionIndex = oldSectionIdentifiers.index(of: newSection.sectionIdentifier),
+                let oldSectionIndex = oldSectionIdentifiers.firstIndex(of: newSection.sectionIdentifier),
                 let oldSection = oldData[safe: oldSectionIndex] else { return }
 
             // OPTIMIZATION:
