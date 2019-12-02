@@ -70,6 +70,8 @@ extension FetchDelegate: NSFetchedResultsControllerDelegate {
                 pendingUpdates.insertedRows.insert(newIndexPath)
                 pendingUpdates.deletedRows.insert(indexPath)
             }
+        @unknown default:
+            break
         }
     }
     

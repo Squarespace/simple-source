@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license              = { :type => 'Apache', :file => 'LICENSE' }
   s.authors              = { 'Morten Heiberg' => 'mheiberg@squarespace.com', 'Thor Frolich' => 'tfrolich@squarespace.com' }
   s.platform             = :ios, '9.0'
-  s.swift_version        = '4.2'
+  s.swift_version        = '5.1'
   s.source               = { :git => 'https://github.com/Squarespace/simple-source.git', :tag => s.version }
   s.source_files         = 'Sources/**/*.{h,m,swift}'
   s.dependency           'Dwifft', '~> 0.9.0'
@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
     test_spec.source_files = 'Tests/**/*.swift'
     test_spec.dependency 'Nimble'
     test_spec.dependency 'Quick'
-  end  
+  end
 end
 
