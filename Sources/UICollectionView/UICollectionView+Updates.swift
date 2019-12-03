@@ -7,24 +7,26 @@ extension UICollectionView {
     
     public var defaultViewUpdate: IndexedUpdateHandler.Observer {
         return { [weak self] update in
-            guard let _ = self?.window else {
-                self?.reloadData()
+            guard let self = self else { return }
+
+            if self.window == nil || update.isLikelyToCrashUIKitViews {
+                self.reloadData()
                 return
             }
-            self?.performBatchUpdates({
-                switch update {
-                case let .delta(insertedSections, updatedSections, deletedSections, insertedRows, updatedRows, deletedRows):
-                    guard let strongSelf = self else { return }
-                    strongSelf.insertSections(insertedSections)
-                    strongSelf.deleteSections(deletedSections)
-                    strongSelf.reloadSections(updatedSections)
-                    strongSelf.insertItems(at: insertedRows)
-                    strongSelf.deleteItems(at: deletedRows)
-                    strongSelf.reloadItems(at: updatedRows)
-                case .full:
-                    self?.reloadData()
-                }
-            }, completion: { _ in })
+
+            switch update {
+            case let .delta(insertedSections, updatedSections, deletedSections, insertedRows, updatedRows, deletedRows):
+                self.performBatchUpdates({
+                    self.insertSections(insertedSections)
+                    self.deleteSections(deletedSections)
+                    self.reloadSections(updatedSections)
+                    self.insertItems(at: insertedRows)
+                    self.deleteItems(at: deletedRows)
+                    self.reloadItems(at: updatedRows)
+                }, completion: { _ in })
+            case .full:
+                self.reloadData()
+            }
         }
     }
 }

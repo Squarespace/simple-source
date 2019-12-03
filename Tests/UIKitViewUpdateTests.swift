@@ -60,7 +60,7 @@ class UIKitViewUpdateTests: QuickSpec {
                     var didPerformDiffedUpdate = false
                     var updateIsLikelyToCrashUITableView = true
                     vc.onViewUpdate = { update in
-                        updateIsLikelyToCrashUITableView = update.isLikelyToCrashUITableView
+                        updateIsLikelyToCrashUITableView = update.isLikelyToCrashUIKitViews
                         switch update {
                         case .delta:
                             didPerformDiffedUpdate = true
@@ -88,7 +88,7 @@ class UIKitViewUpdateTests: QuickSpec {
 
                     var updateIsLikelyToCrashUITableView = false
                     vc.onViewUpdate = { update in
-                        updateIsLikelyToCrashUITableView = update.isLikelyToCrashUITableView
+                        updateIsLikelyToCrashUITableView = update.isLikelyToCrashUIKitViews
                     }
 
                     DispatchQueue.main.async {
@@ -156,7 +156,6 @@ extension UIKitViewUpdateTests {
         override func viewDidLoad() {
             super.viewDidLoad()
             tableView.dataSource = viewDataSource
-            tableView.reloadData()
         }
     }
 
@@ -212,7 +211,6 @@ extension UIKitViewUpdateTests {
         override func viewDidLoad() {
             super.viewDidLoad()
             collectionView.dataSource = viewDataSource
-            collectionView.reloadData()
         }
     }
 }

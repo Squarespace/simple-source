@@ -16,7 +16,7 @@ extension UITableView {
 
             switch update {
             case .delta(let insertedSections, let updatedSections, let deletedSections, let insertedRows, let updatedRows, let deletedRows):
-                if update.isLikelyToCrashUITableView { break }
+                if update.isLikelyToCrashUIKitViews { break }
                 self.beginUpdates()
                 self.insertSections(insertedSections, with: animation)
                 self.deleteSections(deletedSections, with: animation)
