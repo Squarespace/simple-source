@@ -1,6 +1,6 @@
 import UIKit
 
-public enum IndexedUpdate {
+public enum IndexedUpdate: Equatable {
     case delta(
         insertedSections: IndexSet,
         updatedSections: IndexSet,
@@ -24,6 +24,17 @@ public enum IndexedUpdate {
                 insertedRows.isEmpty &&
                 updatedRows.isEmpty &&
                 deletedRows.isEmpty
+        case .full:
+            return false
+        }
+    }
+
+    var isLikelyToCrashUIKitViews: Bool {
+        switch self {
+        case let .delta(insertedSections, updatedSections, deletedSections, insertedRows, updatedRows, deletedRows):
+            let hasItemUpdates = !(insertedRows.isEmpty && updatedRows.isEmpty && deletedRows.isEmpty)
+            let hasSectionUpdates = !(insertedSections.isEmpty && updatedSections.isEmpty && deletedSections.isEmpty)
+            return hasItemUpdates && hasSectionUpdates
         case .full:
             return false
         }
