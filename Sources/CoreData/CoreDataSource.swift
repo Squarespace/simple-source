@@ -35,7 +35,7 @@ public class CoreDataSource<Item>: DataSourceType where Item: NSManagedObject
     }
     
     public func item(at indexPath: IndexPath) -> Item? {
-        guard fetchedResultsController.fetchedObjects != nil else { return nil }
+        guard let fetchedObjects = fetchedResultsController.fetchedObjects, !fetchedObjects.isEmpty else { return nil }
         return fetchedResultsController.object(at: indexPath)
     }
     
