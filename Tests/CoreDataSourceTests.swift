@@ -41,71 +41,91 @@ class CoreDataSourceTests: QuickSpec {
             
             let dataSource = CoreDataSource(fetchedResultsController: fetchController)
             
-            let entityA = self.createEntity(name: "a", section: 0)
-            let entityB = self.createEntity(name: "b", section: 1)
-            let sections = [[entityA], [entityB]]
-            
-            try? self.context.save()
-            
-            it("has the expected number of sections") {
-                expect(dataSource.numberOfSections()) == sections.count
+            beforeEach {
+                for object in self.fetchController.fetchedObjects ?? [] {
+                    self.context.delete(object)
+                }
+                try? self.context.save()
             }
             
-            it("has the expected number of items in each section") {
-                for sectionIndex in 0 ..< dataSource.numberOfSections() {
-                    expect(dataSource.numberOfItems(in: sectionIndex)) == sections[sectionIndex].count
+            describe("being empty") {
+                it("doesn't crash when querying an empty store") {
+                    let indexPath = IndexPath(item: 0, section: 0)
+                    expect(dataSource.item(at: indexPath)).to(beNil())
                 }
             }
             
-            it("contains all the expected items via function lookup") {
-                for sectionIndex in 0 ..< dataSource.numberOfSections() {
-                    for itemIndex in 0 ..< dataSource.numberOfItems(in: sectionIndex) {
-                        let itemIndexPath = IndexPath(item: itemIndex, section: sectionIndex)
-                        expect(dataSource.item(at: itemIndexPath)) == sections[sectionIndex][itemIndex]
-                    }
-                }
-            }
-            
-            it("exposes the correct data via subscripting") {
-                for sectionIndex in 0 ..< dataSource.numberOfSections() {
-                    for itemIndex in 0 ..< dataSource.numberOfItems(in: sectionIndex) {
-                        let itemIndexPath = IndexPath(item: itemIndex, section: sectionIndex)
-                        expect(dataSource[itemIndexPath]) == dataSource.item(at: itemIndexPath)
-                    }
-                }
-            }
-            
-            it("can check if an index path is valid") {
-                let validIndexPaths = [
-                    IndexPath(item: 0, section: 0),
-                    IndexPath(item: 0, section: 1)
-                ]
+            describe("having content") {
+                var sections: [[TestEntity]]!
                 
-                for indexPath in validIndexPaths {
-                    expect(dataSource.contains(indexPath: indexPath)) == true
+                beforeEach {
+                    let entityA = self.createEntity(name: "a", section: 0)
+                    let entityB = self.createEntity(name: "b", section: 1)
+                    sections = [[entityA], [entityB]]
+                    
+                    try? self.context.save()
                 }
                 
-                let invalidIndexPaths = [
-                    IndexPath(item: 3, section: 0),
-                    IndexPath(item: 100, section: 0),
-                    IndexPath(item: 0, section: 10),
-                    IndexPath(item: 500, section: 5)
-                ]
+                it("has the expected number of sections") {
+                    expect(dataSource.numberOfSections()) == sections.count
+                }
                 
-                for indexPath in invalidIndexPaths {
-                    expect(dataSource.contains(indexPath: indexPath)) == false
-                }
-            }
-            
-            it("can iterate across all valid index paths") {
-                var collectedItems: [TestEntity] = []
-                for indexPath in dataSource.indexPathIterator() {
-                    if let item = dataSource[indexPath] {
-                        collectedItems.append(item)
+                it("has the expected number of items in each section") {
+                    for sectionIndex in 0 ..< dataSource.numberOfSections() {
+                        expect(dataSource.numberOfItems(in: sectionIndex)) == sections[sectionIndex].count
                     }
-                    expect(dataSource.contains(indexPath: indexPath)) == true
                 }
-                expect(collectedItems) == dataSource.allItems()
+                
+                it("contains all the expected items via function lookup") {
+                    for sectionIndex in 0 ..< dataSource.numberOfSections() {
+                        for itemIndex in 0 ..< dataSource.numberOfItems(in: sectionIndex) {
+                            let itemIndexPath = IndexPath(item: itemIndex, section: sectionIndex)
+                            expect(dataSource.item(at: itemIndexPath)) == sections[sectionIndex][itemIndex]
+                        }
+                    }
+                }
+                
+                it("exposes the correct data via subscripting") {
+                    for sectionIndex in 0 ..< dataSource.numberOfSections() {
+                        for itemIndex in 0 ..< dataSource.numberOfItems(in: sectionIndex) {
+                            let itemIndexPath = IndexPath(item: itemIndex, section: sectionIndex)
+                            expect(dataSource[itemIndexPath]) == dataSource.item(at: itemIndexPath)
+                        }
+                    }
+                }
+                
+                it("can check if an index path is valid") {
+                    let validIndexPaths = [
+                        IndexPath(item: 0, section: 0),
+                        IndexPath(item: 0, section: 1)
+                    ]
+                    
+                    for indexPath in validIndexPaths {
+                        expect(dataSource.contains(indexPath: indexPath)) == true
+                    }
+                    
+                    let invalidIndexPaths = [
+                        IndexPath(item: 3, section: 0),
+                        IndexPath(item: 100, section: 0),
+                        IndexPath(item: 0, section: 10),
+                        IndexPath(item: 500, section: 5)
+                    ]
+                    
+                    for indexPath in invalidIndexPaths {
+                        expect(dataSource.contains(indexPath: indexPath)) == false
+                    }
+                }
+                
+                it("can iterate across all valid index paths") {
+                    var collectedItems: [TestEntity] = []
+                    for indexPath in dataSource.indexPathIterator() {
+                        if let item = dataSource[indexPath] {
+                            collectedItems.append(item)
+                        }
+                        expect(dataSource.contains(indexPath: indexPath)) == true
+                    }
+                    expect(collectedItems) == dataSource.allItems()
+                }
             }
         }
     }
