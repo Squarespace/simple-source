@@ -34,8 +34,10 @@ public class BasicDataSource<Section>: DataSourceType where Section: SectionType
     }
 
     public func moveItem(at sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        var sections = self.sections
         let item = sections[sourceIndexPath.section].items[sourceIndexPath.item]
         sections[sourceIndexPath.section].items.remove(at: sourceIndexPath.item)
         sections[destinationIndexPath.section].items.insert(item, at: destinationIndexPath.item)
+        self.sections = sections
     }
 }
