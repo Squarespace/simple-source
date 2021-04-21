@@ -60,6 +60,8 @@ public class IndexedUpdateHandler {
     
     private typealias Token = String
     private var observers = [Token : Observer]()
+
+    public init() {}
     
     deinit {
         observers.removeAll()
