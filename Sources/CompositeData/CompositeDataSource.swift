@@ -16,15 +16,12 @@ public class CompositeDataSource<A: DataSourceType, B: DataSourceType>: DataSour
 
         firstDataSourceSubscription = firstDataSource.updateHandler.subscribe { [weak self] update in
             guard let self = self else { return }
-            print("firstDataSourceSubscription update: \(update)")
             self.updateHandler.send(update: update)
         }
 
         secondDataSourceSubscription = secondDataSource.updateHandler.subscribe { [weak self] update in
             guard let self = self else { return }
-            print("secondDataSourceSubscription update: \(update)")
             let mappedUpdate = update.offsetSections(by: firstDataSource.numberOfSections())
-            print("secondDataSourceSubscription update: \(mappedUpdate)")
             self.updateHandler.send(update: mappedUpdate)
         }
     }
