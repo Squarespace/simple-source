@@ -2,9 +2,9 @@ PODS:
   - Dwifft (0.9)
   - Nimble (8.0.4)
   - Quick (2.2.0)
-  - SimpleSource (2.0.1):
+  - SimpleSource (2.0.4):
     - Dwifft (~> 0.9.0)
-  - SimpleSource/Tests (2.0.1):
+  - SimpleSource/Tests (2.0.4):
     - Dwifft (~> 0.9.0)
     - Nimble
     - Quick
@@ -27,12 +27,12 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  Dwifft: 42912068ed2a8146077d1a1404df18625bd086e1
-  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
-  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  SimpleSource: f1f8ffd13c86e68bb7c263239fc33c241823a509
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Dwifft: 1cf1fa6bcd7986d056de5691a658fe5a37548a2e
+  Nimble: 0e052f9872c5f4f6b470f00731a5ca11d3f5161d
+  Quick: 07e5320ad9dd3c7746527180618f6254fa2128b6
+  SimpleSource: 39b5256f15f1ad47321ee3adfbb216f0952e5785
+  SwiftyJSON: 39722d50e4b0f6b4afbba0767477a8c8129123f5
 
 PODFILE CHECKSUM: 6fbaa06e157be018ca9e7d0fd6fb2a32bc98a73b
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.10.0
