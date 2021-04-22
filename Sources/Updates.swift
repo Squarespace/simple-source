@@ -29,6 +29,24 @@ public enum IndexedUpdate: Equatable {
         }
     }
 
+    public static func createDelta(
+        insertedSections: IndexSet = .init(),
+        updatedSections: IndexSet = .init(),
+        deletedSections: IndexSet = .init(),
+        insertedRows: [IndexPath] = [],
+        updatedRows: [IndexPath] = [],
+        deletedRows: [IndexPath] = []
+    ) -> Self {
+        .delta(
+            insertedSections: insertedSections,
+            updatedSections: updatedSections,
+            deletedSections: deletedSections,
+            insertedRows: insertedRows,
+            updatedRows: updatedRows,
+            deletedRows: deletedRows
+        )
+    }
+
     var isLikelyToCrashUIKitViews: Bool {
         switch self {
         case let .delta(insertedSections, updatedSections, deletedSections, insertedRows, updatedRows, deletedRows):
@@ -81,7 +99,7 @@ public class IndexedUpdateHandler {
         send(update: .full)
     }
     
-    func send(update: IndexedUpdate) {
+    public func send(update: IndexedUpdate) {
         observers.values.forEach { $0(update) }
     }
 }
