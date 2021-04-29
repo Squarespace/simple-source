@@ -60,6 +60,8 @@ public class IndexedUpdateHandler {
     
     private typealias Token = String
     private var observers = [Token : Observer]()
+
+    public init() {}
     
     deinit {
         observers.removeAll()
@@ -79,7 +81,58 @@ public class IndexedUpdateHandler {
         send(update: .full)
     }
     
-    func send(update: IndexedUpdate) {
+    public func send(update: IndexedUpdate) {
         observers.values.forEach { $0(update) }
+    }
+}
+
+public extension IndexedUpdate {
+    func offsetSections(by sectionOffset: Int) -> Self {
+        switch self {
+        case var .delta(
+            insertedSections,
+            updatedSections,
+            deletedSections,
+            insertedRows,
+            updatedRows,
+            deletedRows
+        ):
+            insertedSections = IndexSet(insertedSections.map { $0 + sectionOffset })
+            updatedSections = IndexSet(updatedSections.map { $0 + sectionOffset })
+            deletedSections = IndexSet(deletedSections.map { $0 + sectionOffset })
+            insertedRows = insertedRows.map { IndexPath(item: $0.item, section: $0.section + sectionOffset) }
+            updatedRows = updatedRows.map { IndexPath(item: $0.item, section: $0.section + sectionOffset) }
+            deletedRows = deletedRows.map { IndexPath(item: $0.item, section: $0.section + sectionOffset) }
+
+            return .delta(
+                insertedSections: insertedSections,
+                updatedSections: updatedSections,
+                deletedSections: deletedSections,
+                insertedRows: insertedRows,
+                updatedRows: updatedRows,
+                deletedRows: deletedRows
+            )
+
+        case .full:
+            return self
+        }
+    }
+
+    static func createDelta(
+        insertedSections: IndexSet = .init(),
+        updatedSections: IndexSet = .init(),
+        deletedSections: IndexSet = .init(),
+        insertedRows: [IndexPath] = [],
+        updatedRows: [IndexPath] = [],
+        deletedRows: [IndexPath] = []
+    ) -> Self {
+        .delta(
+            insertedSections:insertedSections,
+            updatedSections:updatedSections,
+            deletedSections:deletedSections,
+            insertedRows: insertedRows,
+            updatedRows: updatedRows,
+            deletedRows: deletedRows
+        )
     }
 }
