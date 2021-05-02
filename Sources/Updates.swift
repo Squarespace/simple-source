@@ -60,6 +60,8 @@ public class IndexedUpdateHandler {
     
     private typealias Token = String
     private var observers = [Token : Observer]()
+
+    public init() {}
     
     deinit {
         observers.removeAll()
@@ -79,7 +81,7 @@ public class IndexedUpdateHandler {
         send(update: .full)
     }
     
-    func send(update: IndexedUpdate) {
+    public func send(update: IndexedUpdate) {
         observers.values.forEach { $0(update) }
     }
 }
