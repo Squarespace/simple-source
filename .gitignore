@@ -11,6 +11,9 @@ project.xcworkspace/
 xcuserdata/
 *.xccheckout
 
+# RubyGems Bundler
+vendor/bundle/
+
 # Playgrounds
 timeline.xctimeline
 
