@@ -7,12 +7,17 @@ target 'SimpleSourceExample' do
     pod 'SwiftyJSON'
 end
 
-# This makes the SimpleSource symbols available to the playground.
-# It became necessary after the release of CocoaPods 1.5.0.
-# See also https://github.com/CocoaPods/CocoaPods/issues/7606
-post_install do |installer|
-    installer.pods_project.build_configurations.each do |config|
-        config.build_settings.delete('CODE_SIGNING_ALLOWED')
-        config.build_settings.delete('CODE_SIGNING_REQUIRED')
+def inherit_project_deployment_target(installer)
+  ios_min_deployment_target = "13.0"
+  puts "Bumping pods iOS deployment target to the minimal available (#{ios_min_deployment_target})"
+  installer.pods_project.targets.each do |target|
+    if target.platform_name == :ios && target.deployment_target.to_f < ios_min_deployment_target.to_f
+      puts "\t#{target.name} has iOS deployment target set to #{target.deployment_target}. Bumping to #{ios_min_deployment_target}"
+      target.deployment_target = ios_min_deployment_target
     end
+  end
+end
+
+post_install do |installer|
+  inherit_project_deployment_target(installer)
 end
