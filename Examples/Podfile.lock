@@ -8,12 +8,12 @@ PODS:
     - Dwifft (~> 0.9.0)
     - Nimble
     - Quick
-  - SwiftyJSON (5.0.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - SimpleSource (from `..`)
   - SimpleSource/Tests (from `..`)
-  - SwiftyJSON
+  - SwiftyJSON (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -31,8 +31,8 @@ SPEC CHECKSUMS:
   Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   SimpleSource: ad7f27c2c45fcbefbeb5b1fe1a8a6cad37c3c586
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 279d64f3e29af7ec75c5ba2f0b166fcca3d20637
+PODFILE CHECKSUM: a5deddba5204624da3222bdb26450e64fabfabc5
 
 COCOAPODS: 1.13.0
