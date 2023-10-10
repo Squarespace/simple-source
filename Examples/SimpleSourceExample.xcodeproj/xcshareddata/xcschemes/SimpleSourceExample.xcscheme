@@ -20,6 +20,20 @@
                ReferencedContainer = "container:SimpleSourceExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C73479B4B3EC915F6BFD710EFCBAA9B3"
+               BuildableName = "SimpleSource-Unit-Tests.xctest"
+               BlueprintName = "SimpleSource-Unit-Tests"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -41,10 +55,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C40C87D320D7CE69007AA4F6"
-               BuildableName = "SimpleSourceTests.xctest"
-               BlueprintName = "SimpleSourceTests"
-               ReferencedContainer = "container:SimpleSourceExample.xcodeproj">
+               BlueprintIdentifier = "C73479B4B3EC915F6BFD710EFCBAA9B3"
+               BuildableName = "SimpleSource-Unit-Tests.xctest"
+               BlueprintName = "SimpleSource-Unit-Tests"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
