@@ -10,7 +10,7 @@ import UIKit
 /// implementations in Swift might not match the @objc requirements of that protocol.
 ///
 /// Set the `editingDelegate` property of your `TableViewDataSource` to control editing.
-public protocol TableViewEditingDelegate: class {
+public protocol TableViewEditingDelegate: AnyObject {
     func editing(tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     func editing(tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
 }

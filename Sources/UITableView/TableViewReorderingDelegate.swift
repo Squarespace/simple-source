@@ -11,7 +11,7 @@ import UIKit
 ///
 /// Set the `reorderingDelegate` property of your `TableViewDataSource` to enable reordering
 /// in the data source.
-public protocol TableViewReorderingDelegate: class {
+public protocol TableViewReorderingDelegate: AnyObject {
 
     /// Return whether the item at the given index path can be moved or not.
     ///

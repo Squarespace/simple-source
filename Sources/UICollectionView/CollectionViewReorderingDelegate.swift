@@ -11,7 +11,7 @@ import UIKit
 ///
 /// Set the `reorderingDelegate` property of your `CollectionViewDataSource` to enable reordering
 /// in the data source.
-public protocol CollectionViewReorderingDelegate: class {
+public protocol CollectionViewReorderingDelegate: AnyObject {
 
     /// Return whether the item at the given index path can be moved or not.
     ///

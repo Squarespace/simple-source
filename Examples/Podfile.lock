@@ -1,22 +1,22 @@
 PODS:
   - Dwifft (0.9)
-  - Nimble (8.0.4)
-  - Quick (2.2.0)
-  - SimpleSource (2.0.4):
+  - Nimble (10.0.0)
+  - Quick (5.0.1)
+  - SimpleSource (2.0.5):
     - Dwifft (~> 0.9.0)
-  - SimpleSource/Tests (2.0.4):
+  - SimpleSource/Tests (2.0.5):
     - Dwifft (~> 0.9.0)
-    - Nimble
-    - Quick
-  - SwiftyJSON (5.0.0)
+    - Nimble (~> 10.0)
+    - Quick (~> 5.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - SimpleSource (from `..`)
   - SimpleSource/Tests (from `..`)
-  - SwiftyJSON
+  - SwiftyJSON (~> 5.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Dwifft
     - Nimble
     - Quick
@@ -27,12 +27,12 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  Dwifft: 1cf1fa6bcd7986d056de5691a658fe5a37548a2e
-  Nimble: 0e052f9872c5f4f6b470f00731a5ca11d3f5161d
-  Quick: 07e5320ad9dd3c7746527180618f6254fa2128b6
-  SimpleSource: 39b5256f15f1ad47321ee3adfbb216f0952e5785
-  SwiftyJSON: 39722d50e4b0f6b4afbba0767477a8c8129123f5
+  Dwifft: 42912068ed2a8146077d1a1404df18625bd086e1
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
+  SimpleSource: 319cae1ee1f41165a9320577b11aad223972f525
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 6fbaa06e157be018ca9e7d0fd6fb2a32bc98a73b
+PODFILE CHECKSUM: a5deddba5204624da3222bdb26450e64fabfabc5
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.13.0
