@@ -1,0 +1,41 @@
+name: ci
+on:
+  pull_request:
+
+  workflow_dispatch:
+
+  push:
+    branches:
+      - master
+
+jobs:
+  run_pod_tests:
+    name: Run pod tests
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Define validation directory
+        id: define_validation_dir
+        run: echo "path=${{ runner.temp }}/validation_${{ github.run_number }}_${{ github.run_attempt }}" >> $GITHUB_OUTPUT
+
+      - name: Run pod unit tests
+        run: |
+          bundle exec pod lib lint \
+          --allow-warnings \
+          --external-podspecs=".github/fixed_podspecs/**/*.podspec" \
+          --validation-dir="${{ steps.define_validation_dir.outputs.path }}" \
+          --no-clean
+
+      - name: Upload test artifacts
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: test_artifacts
+          path: ${{ steps.define_validation_dir.outputs.path }}
