@@ -1,13 +1,13 @@
 PODS:
   - Dwifft (0.9)
-  - Nimble (10.0.0)
-  - Quick (5.0.1)
+  - Nimble (12.3.0)
+  - Quick (7.3.0)
   - SimpleSource (2.0.5):
     - Dwifft (~> 0.9.0)
   - SimpleSource/Tests (2.0.5):
     - Dwifft (~> 0.9.0)
-    - Nimble (~> 10.0)
-    - Quick (~> 5.0)
+    - Nimble (~> 12.0)
+    - Quick (~> 7.0)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
@@ -28,9 +28,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Dwifft: 42912068ed2a8146077d1a1404df18625bd086e1
-  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
-  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
-  SimpleSource: 319cae1ee1f41165a9320577b11aad223972f525
+  Nimble: f8a8219d16f176429b951e8f7e72df5c23ceddc0
+  Quick: d32871931c05547cb4e0bc9009d66a18b50d8558
+  SimpleSource: d2aa14f3f8c509cfdd3ee6b30838118bb6e6a4c6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
 PODFILE CHECKSUM: a5deddba5204624da3222bdb26450e64fabfabc5
