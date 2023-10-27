@@ -7,36 +7,36 @@ private let StoreFilename = "SimpleSource-UnitTest-Store"
 
 class CoreDataSourceTests: QuickSpec {
     
-    lazy var model: NSManagedObjectModel = {
-        let modelURL = Bundle(for: type(of: self)).url(forResource: "TestModel", withExtension: "momd")!
+    static var model: NSManagedObjectModel = {
+        let modelURL = Bundle(for: CoreDataSourceTests.self).url(forResource: "TestModel", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+    static var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let fileManager = FileManager.default
         let directoryURL = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let url = directoryURL.appendingPathComponent("\(StoreFilename).sqlite")
         try? fileManager.removeItem(at: url)
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.model)
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
         try? _ = coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
         return coordinator
     }()
     
-    lazy var context: NSManagedObjectContext = {
+    static var context: NSManagedObjectContext = {
         let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
+        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
         return managedObjectContext
     }()
     
-    lazy var fetchController: NSFetchedResultsController = { () -> NSFetchedResultsController<TestEntity> in
+    static var fetchController: NSFetchedResultsController = { () -> NSFetchedResultsController<TestEntity> in
         let request: NSFetchRequest<TestEntity> = TestEntity.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: #keyPath(TestEntity.name), ascending: true)]
-        let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.context, sectionNameKeyPath: #keyPath(TestEntity.section), cacheName: nil)
+        let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: #keyPath(TestEntity.section), cacheName: nil)
         try? controller.performFetch()
         return controller
     }()
     
-    override func spec() {
+    override class func spec() {
         describe("A CoreDataSource") {
             
             let dataSource = CoreDataSource(fetchedResultsController: fetchController)
@@ -130,8 +130,8 @@ class CoreDataSourceTests: QuickSpec {
         }
     }
     
-    private func createEntity(name: String, section: Int16) -> TestEntity {
-        let entity = NSEntityDescription.insertNewObject(forEntityName: "TestEntity", into: self.context) as! TestEntity
+    private static func createEntity(name: String, section: Int16) -> TestEntity {
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "TestEntity", into: context) as! TestEntity
         entity.name = name
         entity.section = section
         return entity

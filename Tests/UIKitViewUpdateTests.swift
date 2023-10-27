@@ -23,7 +23,7 @@ class UIKitViewUpdateTests: QuickSpec {
         var value: Bool
     }
 
-    override func spec() {
+    override class func spec() {
         let vcTypes: [DataSourceUpdateable.Type] = [TableViewController.self, CollectionViewController.self]
         for type in vcTypes {
 

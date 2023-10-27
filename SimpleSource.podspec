@@ -14,8 +14,8 @@ Pod::Spec.new do |s|
   s.test_spec 'Tests' do |test_spec|
     test_spec.resource = 'Tests/Model/*.xcdatamodeld'
     test_spec.source_files = 'Tests/**/*.swift'
-    test_spec.dependency 'Nimble', '~> 10.0'
-    test_spec.dependency 'Quick', '~> 5.0'
+    test_spec.dependency 'Nimble', '~> 12.0'
+    test_spec.dependency 'Quick', '~> 7.0'
   end
 end
 

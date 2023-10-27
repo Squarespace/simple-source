@@ -4,7 +4,7 @@ import SimpleSource
 
 class BasicDataSourceTests: QuickSpec {
 
-    override func spec() {
+    override class func spec() {
         describe("A BasicDataSource") {
 
             typealias Section = BasicSection<String>

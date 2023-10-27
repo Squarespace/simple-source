@@ -4,39 +4,38 @@ import Nimble
 
 class IndexedUpdateHandlerTests: QuickSpec {
 
-    var subscriptions: [IndexedUpdateHandler.Subscription] = []
-
-    override func spec() {
+    override class func spec() {
         describe("An IndexedUpdateHandler") {
             let updateHandler = IndexedUpdateHandler()
+            var subscriptions: [IndexedUpdateHandler.Subscription]!
+
+            beforeEach {
+                subscriptions = []
+            }
 
             it("forwards full updates to a subscribed observer") {
                 var receivedFullUpdates = 0
-                let subscription = updateHandler.subscribe { update in
+                subscriptions.append(updateHandler.subscribe { update in
                     if case .full = update {
                         receivedFullUpdates = receivedFullUpdates + 1
                     } else {
                         fail("Unexpected update received.")
                     }
-                }
-                self.subscriptions = [subscription]
+                })
 
                 updateHandler.sendFullUpdate()
                 expect(receivedFullUpdates) == 1
 
                 updateHandler.send(update: .full)
                 expect(receivedFullUpdates) == 2
-
-                self.subscriptions = []
             }
 
             it("forwards delta updates to a subscribed observer") {
                 var receivedUpdates: [IndexedUpdate] = []
 
-                let subscription = updateHandler.subscribe { update in
+                subscriptions.append(updateHandler.subscribe { update in
                     receivedUpdates.append(update)
-                }
-                self.subscriptions = [subscription]
+                })
 
                 let sentInsertedSections = IndexSet([1, 2])
                 let sentUpdatedSections = IndexSet([3, 4, 5])
@@ -72,17 +71,13 @@ class IndexedUpdateHandlerTests: QuickSpec {
                 case .full:
                     fail("Unexpected update received.")
                 }
-
-                self.subscriptions = []
             }
 
             it("stops sending updates to removed observers") {
                 var updatesForSubscriptionA = 0
                 var updatesForSubscriptionB = 0
 
-                self.subscriptions = []
-
-                self.subscriptions.append(updateHandler.subscribe { _ in
+                subscriptions.append(updateHandler.subscribe { _ in
                     updatesForSubscriptionA = updatesForSubscriptionA + 1
                 })
 
@@ -90,7 +85,7 @@ class IndexedUpdateHandlerTests: QuickSpec {
                 expect(updatesForSubscriptionA) == 1
                 expect(updatesForSubscriptionB) == 0
 
-                self.subscriptions.append(updateHandler.subscribe { _ in
+                subscriptions.append(updateHandler.subscribe { _ in
                     updatesForSubscriptionB = updatesForSubscriptionB + 1
                 })
 
@@ -98,19 +93,19 @@ class IndexedUpdateHandlerTests: QuickSpec {
                 expect(updatesForSubscriptionA) == 2
                 expect(updatesForSubscriptionB) == 1
 
-                _ = self.subscriptions.removeLast()
+                _ = subscriptions.removeLast()
 
                 updateHandler.sendFullUpdate()
                 expect(updatesForSubscriptionA) == 3
                 expect(updatesForSubscriptionB) == 1
 
-                _ = self.subscriptions.removeLast()
+                _ = subscriptions.removeLast()
 
                 updateHandler.sendFullUpdate()
                 expect(updatesForSubscriptionA) == 3
                 expect(updatesForSubscriptionB) == 1
 
-                expect(self.subscriptions.isEmpty) == true
+                expect(subscriptions.isEmpty) == true
             }
 
             it("properly removes observation closures") {
@@ -119,12 +114,12 @@ class IndexedUpdateHandlerTests: QuickSpec {
                 do {
                     let object = TestObject()
                     weakObject = object
-                    self.subscriptions.append(updateHandler.subscribe { [object] _ in _ = object })
+                    subscriptions.append(updateHandler.subscribe { [object] _ in _ = object })
                 }
 
-                expect(weakObject != nil) == true
-                self.subscriptions = []
-                expect(weakObject == nil) == true
+                expect(weakObject).toNot(beNil())
+                subscriptions = []
+                expect(weakObject).to(beNil())
             }
         }
     }
