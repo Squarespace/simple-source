@@ -11,6 +11,12 @@ project.xcworkspace/
 xcuserdata/
 *.xccheckout
 
+#SPM
+/.build
+/Packages
+.swiftpm/
+.netrc
+
 # RubyGems Bundler
 vendor/bundle/
 
