@@ -9,7 +9,6 @@ Pod::Spec.new do |s|
   s.swift_version        = '5.7'
   s.source               = { :git => 'https://github.com/Squarespace/simple-source.git', :tag => s.version }
   s.source_files         = 'Sources/**/*.{h,m,swift}'
-  s.dependency           'Dwifft', '~> 0.9.0'
 
   s.test_spec 'Tests' do |test_spec|
     test_spec.resource = 'Tests/Model/*.xcdatamodeld'
