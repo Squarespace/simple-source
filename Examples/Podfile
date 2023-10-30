@@ -4,7 +4,6 @@ target 'SimpleSourceExample' do
     use_frameworks!
 
     pod 'SimpleSource', :path => '..', :testspecs => ['Tests']
-    pod 'SwiftyJSON', '~> 5.0'
 end
 
 def inherit_project_deployment_target(installer)

@@ -29,7 +29,6 @@ jobs:
         run: |
           bundle exec pod lib lint \
           --allow-warnings \
-          --external-podspecs=".github/fixed_podspecs/**/*.podspec" \
           --validation-dir="${{ steps.define_validation_dir.outputs.path }}" \
           --no-clean
 
