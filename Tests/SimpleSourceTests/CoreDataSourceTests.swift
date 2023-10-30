@@ -7,9 +7,16 @@ import Quick
 private let StoreFilename = "SimpleSource-UnitTest-Store"
 
 class CoreDataSourceTests: QuickSpec {
-    
+    static let bundle: Bundle = {
+        #if SWIFT_PACKAGE
+        .module
+        #else
+        .init(for: CoreDataSourceTests.self)
+        #endif
+    }()
+
     static var model: NSManagedObjectModel = {
-        let modelURL = Bundle(for: CoreDataSourceTests.self).url(forResource: "TestModel", withExtension: "momd")!
+        let modelURL = bundle.url(forResource: "TestModel", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
