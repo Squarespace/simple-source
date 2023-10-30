@@ -1,6 +1,6 @@
 # SimpleSource
 
-[![Build Status](https://travis-ci.org/Squarespace/simple-source.svg?branch=master)](https://travis-ci.org/Squarespace/simple-source)
+[![ci](https://github.com/Squarespace/simple-source/actions/workflows/ci.yml/badge.svg)](https://github.com/Squarespace/simple-source/actions/workflows/ci.yml)
 [![codecov.io](https://codecov.io/github/Squarespace/simple-source/coverage.svg?branch=master)](https://codecov.io/github/Squarespace/simple-source?branch=master)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/SimpleSource.svg)](https://cocoapods.org/pods/SimpleSource)
