@@ -1,5 +1,4 @@
 import Foundation
-import Dwifft
 
 private struct WrappedIdentifiableSection<T: SectionType> {
     private let value: T
@@ -38,15 +37,13 @@ struct Diff {
 
         let oldSectionIdentifiers = oldData.map { $0.sectionIdentifier }
         let newSectionIdentifiers = newData.map { $0.sectionIdentifier }
-        
-        let sectionsDiff = Dwifft.diff(oldSectionIdentifiers, newSectionIdentifiers)
 
-        sectionsDiff.forEach { step in
-            switch step {
-            case .insert:
-                insertedSections.insert(step.idx)
-            case .delete:
-                deletedSections.insert(step.idx)
+        newSectionIdentifiers.difference(from: oldSectionIdentifiers).forEach { change in
+            switch change {
+            case let .remove(offset, _, _):
+                deletedSections.insert(offset)
+            case let .insert(offset, _, _):
+                insertedSections.insert(offset)
             }
         }
 
@@ -76,20 +73,17 @@ struct Diff {
                     .map { IndexPath(item: $0.offset, section: sectionIndex) }
             } else {
                 // Calculate a diff to transform the old section items into the new section items. No in-place updates will be emitted.
-                Dwifft.diff(oldSection.items, newSection.items)
-                    .forEach { step in
-                        switch step {
-                        case .insert:
-                            let indexPath = IndexPath(item: step.idx, section: sectionIndex)
-                            insertedRows.append(indexPath)
-                        case .delete:
-                            let indexPath = IndexPath(item: step.idx, section: oldSectionIndex)
-                            deletedRows.append(indexPath)
-                        }
+                newSection.items.difference(from: oldSection.items).forEach { change in
+                    switch change {
+                    case let .remove(offset, _, _):
+                        deletedRows.append(.init(item: offset, section: oldSectionIndex))
+                    case let .insert(offset, _, _):
+                        insertedRows.append(.init(item: offset, section: sectionIndex))
                     }
+                }
             }
         }
-        
+
         return .delta(
             insertedSections: insertedSections,
             updatedSections: IndexSet(),
