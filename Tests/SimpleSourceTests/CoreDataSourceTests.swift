@@ -1,7 +1,8 @@
-import Quick
-import Nimble
-import SimpleSource
 import CoreData
+import Foundation
+import Nimble
+import Quick
+@testable import SimpleSource
 
 private let StoreFilename = "SimpleSource-UnitTest-Store"
 

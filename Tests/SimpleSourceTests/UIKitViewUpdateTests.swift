@@ -1,6 +1,6 @@
-import UIKit
-import Quick
 import Nimble
+import Quick
+import UIKit
 @testable import SimpleSource
 
 protocol DataSourceUpdateable: UIViewController {
