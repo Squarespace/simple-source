@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1125C4B111C313BADE9DEE27 /* Pods_SimpleSourceExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03B72459B7D8A89ED6D1A29 /* Pods_SimpleSourceExample.framework */; };
+		62FF82AA2AF09C9500C7EB61 /* SimpleSource in Frameworks */ = {isa = PBXBuildFile; productRef = 62FF82A92AF09C9500C7EB61 /* SimpleSource */; };
 		C424C2691E3B4B2900CEE8C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C2681E3B4B2900CEE8C0 /* AppDelegate.swift */; };
 		C424C26B1E3B4B2900CEE8C0 /* ColorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424C26A1E3B4B2900CEE8C0 /* ColorTableViewController.swift */; };
 		C424C26E1E3B4B2900CEE8C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C424C26C1E3B4B2900CEE8C0 /* Main.storyboard */; };
@@ -35,8 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		65333953768EE8F03228185B /* Pods-SimpleSourceExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleSourceExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample.debug.xcconfig"; sourceTree = "<group>"; };
-		8C2328A1D61B2AA900671F49 /* Pods-SimpleSourceExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleSourceExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample.release.xcconfig"; sourceTree = "<group>"; };
 		C424C2651E3B4B2900CEE8C0 /* SimpleSourceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSourceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C424C2681E3B4B2900CEE8C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C424C26A1E3B4B2900CEE8C0 /* ColorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 		C424C2AB1E3D1B1600CEE8C0 /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 		C4847CC4200388DD00841DBA /* ItemListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListTableViewController.swift; sourceTree = "<group>"; };
 		C4E8EA791EABC18300D5EE1D /* ReorderingColorGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderingColorGridViewController.swift; sourceTree = "<group>"; };
-		E03B72459B7D8A89ED6D1A29 /* Pods_SimpleSourceExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleSourceExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,37 +68,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1125C4B111C313BADE9DEE27 /* Pods_SimpleSourceExample.framework in Frameworks */,
+				62FF82AA2AF09C9500C7EB61 /* SimpleSource in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D1976861E89CF5DB8542DB1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				65333953768EE8F03228185B /* Pods-SimpleSourceExample.debug.xcconfig */,
-				8C2328A1D61B2AA900671F49 /* Pods-SimpleSourceExample.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		6C8F20F1EEC12F51A1D3E66B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E03B72459B7D8A89ED6D1A29 /* Pods_SimpleSourceExample.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		C424C25C1E3B4B2900CEE8C0 = {
 			isa = PBXGroup;
 			children = (
 				C424C2671E3B4B2900CEE8C0 /* SimpleSourceExample */,
 				C424C2661E3B4B2900CEE8C0 /* Products */,
-				5D1976861E89CF5DB8542DB1 /* Pods */,
-				6C8F20F1EEC12F51A1D3E66B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -264,17 +242,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C424C2771E3B4B2900CEE8C0 /* Build configuration list for PBXNativeTarget "SimpleSourceExample" */;
 			buildPhases = (
-				C9493BAEA1942A5FAEECDEE7 /* [CP] Check Pods Manifest.lock */,
 				C424C2611E3B4B2900CEE8C0 /* Sources */,
 				C424C2621E3B4B2900CEE8C0 /* Frameworks */,
 				C424C2631E3B4B2900CEE8C0 /* Resources */,
-				61726B5B8A96F790C3CA8367 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SimpleSourceExample;
+			packageProductDependencies = (
+				62FF82A92AF09C9500C7EB61 /* SimpleSource */,
+			);
 			productName = SimpleSourceExample;
 			productReference = C424C2651E3B4B2900CEE8C0 /* SimpleSourceExample.app */;
 			productType = "com.apple.product-type.application";
@@ -306,6 +285,9 @@
 				Base,
 			);
 			mainGroup = C424C25C1E3B4B2900CEE8C0;
+			packageReferences = (
+				62FF82A82AF09C7600C7EB61 /* XCLocalSwiftPackageReference ".." */,
+			);
 			productRefGroup = C424C2661E3B4B2900CEE8C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -329,44 +311,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		61726B5B8A96F790C3CA8367 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleSourceExample/Pods-SimpleSourceExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C9493BAEA1942A5FAEECDEE7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SimpleSourceExample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C424C2611E3B4B2900CEE8C0 /* Sources */ = {
@@ -539,7 +483,6 @@
 		};
 		C424C2781E3B4B2900CEE8C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65333953768EE8F03228185B /* Pods-SimpleSourceExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleSourceExample/Info.plist;
@@ -554,7 +497,6 @@
 		};
 		C424C2791E3B4B2900CEE8C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C2328A1D61B2AA900671F49 /* Pods-SimpleSourceExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleSourceExample/Info.plist;
@@ -589,6 +531,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		62FF82A82AF09C7600C7EB61 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		62FF82A92AF09C9500C7EB61 /* SimpleSource */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SimpleSource;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C424C29D1E3D030600CEE8C0 /* CharacterModel.xcdatamodeld */ = {

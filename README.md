@@ -18,9 +18,7 @@ Run the example app. Navigate the UI and see how little code is in each view con
 Then come back here to learn more.
 
 ```sh
-bundle install
 cd Examples/
-bundle exec pod install
 open SimpleSourceExample.xcworkspace
 ```
 
@@ -379,9 +377,7 @@ There is a playground and an example project in the `Examples/` directory.
 To try it out, run the following commands:
 
 ```sh
-bundle install
 cd Examples/
-bundle exec pod install
 open SimpleSourceExamples.xcworkspace
 ```
 
