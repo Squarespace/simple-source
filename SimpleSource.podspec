@@ -8,11 +8,11 @@ Pod::Spec.new do |s|
   s.platform             = :ios, '13.0'
   s.swift_version        = '5.7'
   s.source               = { :git => 'https://github.com/Squarespace/simple-source.git', :tag => s.version }
-  s.source_files         = 'Sources/**/*.{h,m,swift}'
+  s.source_files         = 'Sources/' + s.name + '/**/*.{h,m,swift}'
 
   s.test_spec 'Tests' do |test_spec|
-    test_spec.resource = 'Tests/Model/*.xcdatamodeld'
-    test_spec.source_files = 'Tests/**/*.swift'
+    test_spec.resource = 'Tests/' + test_spec.name.gsub("/", "") + '/Resources/*.xcdatamodeld'
+    test_spec.source_files = 'Tests/' + test_spec.name.gsub("/", "") + '/**/*.swift'
     test_spec.dependency 'Nimble', '~> 12.0'
     test_spec.dependency 'Quick', '~> 7.0'
   end

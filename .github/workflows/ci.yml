@@ -38,3 +38,13 @@ jobs:
         with:
           name: test_artifacts
           path: ${{ steps.define_validation_dir.outputs.path }}
+
+      - name: Install xcbeautify
+        run: brew install xcbeautify
+
+      - name: Run SPM unit tests
+        run: |
+          xcodebuild test \
+          -scheme swift-simple-source \
+          -destination 'platform=iOS Simulator,name=iPhone SE (3rd generation),OS=latest' \
+          | xcbeautify

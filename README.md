@@ -18,9 +18,7 @@ Run the example app. Navigate the UI and see how little code is in each view con
 Then come back here to learn more.
 
 ```sh
-bundle install
 cd Examples/
-bundle exec pod install
 open SimpleSourceExample.xcworkspace
 ```
 
@@ -158,6 +156,29 @@ pod 'SimpleSource'
 ```
 
 Then run the command `pod install` to add SimpleSource to your workspace.
+
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler.
+
+You can add SimpleSource to an Xcode project by adding it as a package dependency.
+
+  1. From the **File** menu, select **Add Packages...**
+  1. Enter "https://github.com/Squarespace/simple-source" into the package repository URL text field
+  1. Depending on how your project is structured:
+      - If you have a single application target that needs access to the library, then add
+        **SimpleSource** directly to your application.
+      - If you want to use this library from multiple Xcode targets, or mix Xcode targets and SPM
+        targets, you must create a shared framework that depends on **SimpleSource** and
+        then depend on that framework in all of your targets.
+
+If you developing a package, adding SimpleSource as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/Squarespace/simple-source", from: "3.0.1")
+]
+```
 
 ## Getting Started
 
@@ -356,9 +377,7 @@ There is a playground and an example project in the `Examples/` directory.
 To try it out, run the following commands:
 
 ```sh
-bundle install
 cd Examples/
-bundle exec pod install
 open SimpleSourceExamples.xcworkspace
 ```
 

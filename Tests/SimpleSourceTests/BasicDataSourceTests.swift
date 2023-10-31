@@ -1,6 +1,7 @@
-import Quick
+import Foundation
 import Nimble
-import SimpleSource
+import Quick
+@testable import SimpleSource
 
 class BasicDataSourceTests: QuickSpec {
 

@@ -1,5 +1,6 @@
-import Quick
+import Foundation
 import Nimble
+import Quick
 @testable import SimpleSource
 
 class IndexedUpdateHandlerTests: QuickSpec {
