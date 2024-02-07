@@ -42,9 +42,6 @@ jobs:
           name: test_artifacts
           path: ${{ steps.define_validation_dir.outputs.path }}
 
-      - name: Install xcbeautify
-        run: brew install xcbeautify
-
       - name: Run SPM unit tests
         run: |
           xcodebuild test \
