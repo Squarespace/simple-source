@@ -11,7 +11,10 @@ on:
 jobs:
   run_pod_tests:
     name: Run pod tests
-    runs-on: macos-latest
+    strategy:
+      matrix:
+        os: [macos-12, macos-13, macos-14]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
